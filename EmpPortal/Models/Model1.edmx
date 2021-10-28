@@ -1,0 +1,157 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="masterModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="forgot">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="emailid" Type="nvarchar" MaxLength="40" />
+          <Property Name="securityquestion" Type="nvarchar" MaxLength="100" />
+          <Property Name="securityanswer" Type="nvarchar" MaxLength="100" />
+          <Property Name="newpassword" Type="nvarchar" MaxLength="20" />
+          <Property Name="confirmpassword" Type="nvarchar" MaxLength="20" />
+        </EntityType>
+        <EntityType Name="login">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="emailid" Type="nvarchar" MaxLength="40" />
+          <Property Name="password" Type="nvarchar" MaxLength="20" />
+        </EntityType>
+        <EntityType Name="signup">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="name" Type="nvarchar" MaxLength="40" />
+          <Property Name="empid" Type="nvarchar" MaxLength="40" />
+          <Property Name="mobileno" Type="nvarchar" MaxLength="15" />
+          <Property Name="dob" Type="date" />
+          <Property Name="emailid" Type="nvarchar" MaxLength="40" />
+          <Property Name="password" Type="nvarchar" MaxLength="20" />
+          <Property Name="confirmpassword" Type="nvarchar" MaxLength="20" />
+          <Property Name="securityquestion" Type="nvarchar" MaxLength="100" />
+          <Property Name="securityanswer" Type="nvarchar" MaxLength="100" />
+        </EntityType>
+        <EntityContainer Name="masterModelStoreContainer">
+          <EntitySet Name="forgot" EntityType="Self.forgot" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="login" EntityType="Self.login" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="signup" EntityType="Self.signup" Schema="dbo" store:Type="Tables" />
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="masterModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="forgot">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="emailid" Type="String" MaxLength="40" FixedLength="false" Unicode="true" />
+          <Property Name="securityquestion" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="securityanswer" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="newpassword" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="confirmpassword" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="login">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="emailid" Type="String" MaxLength="40" FixedLength="false" Unicode="true" />
+          <Property Name="password" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="signup">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="name" Type="String" MaxLength="40" FixedLength="false" Unicode="true" />
+          <Property Name="empid" Type="String" MaxLength="40" FixedLength="false" Unicode="true" />
+          <Property Name="mobileno" Type="String" MaxLength="15" FixedLength="false" Unicode="true" />
+          <Property Name="dob" Type="DateTime" Precision="0" />
+          <Property Name="emailid" Type="String" MaxLength="40" FixedLength="false" Unicode="true" />
+          <Property Name="password" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="confirmpassword" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="securityquestion" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="securityanswer" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityContainer Name="masterEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="forgots" EntityType="Self.forgot" />
+          <EntitySet Name="logins" EntityType="Self.login" />
+          <EntitySet Name="signups" EntityType="Self.signup" />
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="masterModelStoreContainer" CdmEntityContainer="masterEntities">
+          <EntitySetMapping Name="forgots">
+            <EntityTypeMapping TypeName="masterModel.forgot">
+              <MappingFragment StoreEntitySet="forgot">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="emailid" ColumnName="emailid" />
+                <ScalarProperty Name="securityquestion" ColumnName="securityquestion" />
+                <ScalarProperty Name="securityanswer" ColumnName="securityanswer" />
+                <ScalarProperty Name="newpassword" ColumnName="newpassword" />
+                <ScalarProperty Name="confirmpassword" ColumnName="confirmpassword" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="logins">
+            <EntityTypeMapping TypeName="masterModel.login">
+              <MappingFragment StoreEntitySet="login">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="emailid" ColumnName="emailid" />
+                <ScalarProperty Name="password" ColumnName="password" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="signups">
+            <EntityTypeMapping TypeName="masterModel.signup">
+              <MappingFragment StoreEntitySet="signup">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="empid" ColumnName="empid" />
+                <ScalarProperty Name="mobileno" ColumnName="mobileno" />
+                <ScalarProperty Name="dob" ColumnName="dob" />
+                <ScalarProperty Name="emailid" ColumnName="emailid" />
+                <ScalarProperty Name="password" ColumnName="password" />
+                <ScalarProperty Name="confirmpassword" ColumnName="confirmpassword" />
+                <ScalarProperty Name="securityquestion" ColumnName="securityquestion" />
+                <ScalarProperty Name="securityanswer" ColumnName="securityanswer" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

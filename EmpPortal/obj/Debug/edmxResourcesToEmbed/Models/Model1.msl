@@ -1,0 +1,42 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="masterModelStoreContainer" CdmEntityContainer="masterEntities">
+    <EntitySetMapping Name="forgots">
+      <EntityTypeMapping TypeName="masterModel.forgot">
+        <MappingFragment StoreEntitySet="forgot">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="emailid" ColumnName="emailid" />
+          <ScalarProperty Name="securityquestion" ColumnName="securityquestion" />
+          <ScalarProperty Name="securityanswer" ColumnName="securityanswer" />
+          <ScalarProperty Name="newpassword" ColumnName="newpassword" />
+          <ScalarProperty Name="confirmpassword" ColumnName="confirmpassword" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="logins">
+      <EntityTypeMapping TypeName="masterModel.login">
+        <MappingFragment StoreEntitySet="login">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="emailid" ColumnName="emailid" />
+          <ScalarProperty Name="password" ColumnName="password" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="signups">
+      <EntityTypeMapping TypeName="masterModel.signup">
+        <MappingFragment StoreEntitySet="signup">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="empid" ColumnName="empid" />
+          <ScalarProperty Name="mobileno" ColumnName="mobileno" />
+          <ScalarProperty Name="dob" ColumnName="dob" />
+          <ScalarProperty Name="emailid" ColumnName="emailid" />
+          <ScalarProperty Name="password" ColumnName="password" />
+          <ScalarProperty Name="confirmpassword" ColumnName="confirmpassword" />
+          <ScalarProperty Name="securityquestion" ColumnName="securityquestion" />
+          <ScalarProperty Name="securityanswer" ColumnName="securityanswer" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

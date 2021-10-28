@@ -1,0 +1,42 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="masterModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="forgot">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="emailid" Type="String" MaxLength="40" FixedLength="false" Unicode="true" />
+    <Property Name="securityquestion" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="securityanswer" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="newpassword" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="confirmpassword" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="login">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="emailid" Type="String" MaxLength="40" FixedLength="false" Unicode="true" />
+    <Property Name="password" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="signup">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="name" Type="String" MaxLength="40" FixedLength="false" Unicode="true" />
+    <Property Name="empid" Type="String" MaxLength="40" FixedLength="false" Unicode="true" />
+    <Property Name="mobileno" Type="String" MaxLength="15" FixedLength="false" Unicode="true" />
+    <Property Name="dob" Type="DateTime" Precision="0" />
+    <Property Name="emailid" Type="String" MaxLength="40" FixedLength="false" Unicode="true" />
+    <Property Name="password" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="confirmpassword" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="securityquestion" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="securityanswer" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityContainer Name="masterEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="forgots" EntityType="Self.forgot" />
+    <EntitySet Name="logins" EntityType="Self.login" />
+    <EntitySet Name="signups" EntityType="Self.signup" />
+  </EntityContainer>
+</Schema>
