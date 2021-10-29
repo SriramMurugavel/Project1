@@ -214,6 +214,7 @@
     <Content Include="Views\Home\forgot.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Home\signup.cshtml" />
+    <Content Include="Views\Shared\_NewLayoutPage.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
